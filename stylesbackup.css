@@ -11,23 +11,19 @@ nav ul{
 	align-items: center;
 	color: black;	
 	height: 90px;
-	list-style: none;
 }
 
 nav ul li.logo {
-	padding-left: 120px;
+	padding-left: 150px;
 }
 
-nav ul li.logo.logoimg {
+nav ul li.logoimg {
 	padding-bottom: 10px;
 }
 
-nav ul li.logo.logotxt {
+nav ul li.logotxt {
 	padding-left: 7px;
 	font-size: 26px;
-}
-
-nav ul li.searchbar {
 }
 
 header {
@@ -35,12 +31,11 @@ header {
 	min-width:100%;
 }
 
-nav ul a{
-	color: black;
-	text-decoration: none;
+ul {
+	list-style: none;
 }
 
-.bgimage {
+.image {
 	max-width:100%;
 	height:auto;
 }
