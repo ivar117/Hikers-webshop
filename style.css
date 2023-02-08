@@ -27,7 +27,16 @@ nav ul li.logo.logotxt {
 	font-size: 26px;
 }
 
+nav ul li.shopcart {
+	margin-left: auto;
+}
+
 nav ul li.searchbar {
+	background-color: black;
+	color: white;
+	border-radius: 22px;
+	padding-inline: 20px;
+	/*centrera*/
 }
 
 header {
