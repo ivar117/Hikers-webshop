@@ -8,39 +8,36 @@
 </head>
 <body>
 	<nav>
-		<ul>
-			<li><img src="images/bars.png" width="80%"></li>
-			<li class="logo">
-				<a href="index.html">
-					<!--<div class="logoimg">-->
-						<!--<img src="images/logo.png" width="90%"-->
-					<!--</div>-->
-					<!--<div class="logotxt">-->
-						<!--<h1>Hikers</h1>-->
-					<!--</div>-->
-					<p><img src="images/logo.png" width="90%"><h1>Hikers</h1></p>
-				</a>
-			</li>
-			<li class="searchbar">
-				<!--<p>Search for over 1 product...</p>-->
-				<p><img src="images/search.png" width="20px"> Search for over 1 product...</p>
-			</li>
-			<li class="shopcart">
-				<img src="images/cart.png" width="32%">
-			</li>
-		</ul>
-	</nav>
-	<!--<header class="w3-display-container w3-content w3-wide" style="max-width:100%;min-width:100%" id="home">-->
-	<header id="home">
-		<div class="bgimage">
-  			<img src="images/landscape.jpg" alt="landscape">
+		<!--<img class="menu" src="images/bars.png" width="80%">-->
+		<div class="menu">
+			<img src="images/bars.png" width="100%" onmousedown="this.src='images/cross.png';" onmouseup="this.src='images/bars.png';" />
+			<div class="menu-hoverbar">
+				<img src="images/menu-hoverbar.png" width="37px">
+			</div>
 		</div>
-		<h2>We want you to succeed on your hike
-			with quality products.</h2>
-		<h3>Start shopping now</h3>
+		<a class="logo" href="index.html">
+			<div class="logoimg">
+				<img src="images/logo.png" width="95%">
+			</div>
+			<div class="logotxt">
+				<h1>Hikers</h1>
+			</div>
+		</a>
+			<!--<div class="searchbar">-->
+				<!--<p>Search for over 1 product...</p>-->
+				<!--<img src="images/search.png" width="20px"><p> Search for over 1 product...</p>-->
+			<!--</div>-->
+		<div class="shopcart">
+			<img src="images/cart.png" width="32%">
+		</div>
+	</nav>
+
+	<header id="start-header">
+		<div class="header-text">
+			<h2>We want you to succeed on your hike<br>
+				with quality products.</h2>
+			<h3>Start shopping now</h3>
+		</div>
 	</header>
-		<!--<h2>We want you to succeed on your hike-->
-			<!--with quality products.</h2>-->
-		<!--<h3>Start shopping now</h3>-->
 </body>
 </html>
