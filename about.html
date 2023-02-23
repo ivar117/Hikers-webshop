@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initia"> <!--Sätter width till samma som användarens enhet-->
 	<link rel="stylesheet" href="style.css" media="all">
-	<title>Shop</title>
+	<title>Home</title>
 	<script> 
 	fetch("nav.html")
 		.then(resp => resp.text())
@@ -22,15 +22,23 @@
 	</script> 
 </head>
 <body>
-	<div id="navbar"></div>
+	<div id="navbar"></div> 
+	<header id="about-header">
+		<div class="header-caption">About us</div>
+	</header>
 
 	<div class="std-margin">
-		<div class="underline-caption">All products</div>
-		<div class="products">
+		<!--<div class="underline-caption">About us</div>-->
+		<p>We founded this company because of our passion for the outdoors</p>
 
-		</div>
+		<div class="underline-caption">Frequently Asked Questions</div>
+
+		<p class="question-text">How long does shipping take?</p>
+		<p>It will usually take up to 1-2 business days.</p>
+		<p class="question-text">What is your return policy?</p>
+		<p>We </p>
 	</div>
 
-	<!--<div id="included-footer"></div>-->
+	<div id="included-footer"></div>
 </body>
 </html>

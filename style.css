@@ -4,7 +4,13 @@ body {
 	box-sizing: border-box;
 	color: black;
 	/*font-family: sans-serif;*/
-	font-family: 'Fira Sans', sans-serif; /* Sätter fonten */
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 23px;
+}
+
+html {
+	height: 100%;
+	width: 100%;
 }
 
 nav {
@@ -18,8 +24,11 @@ nav {
 }
 
 
-nav a {
+a {
 	color: black;
+}
+
+nav a {
 	text-decoration: none;
 }
 
@@ -63,6 +72,7 @@ nav a {
 }
 
 .shopcart .counter {
+	color: white;
 	margin-top: 20px;
 	background-color: #D38871;
 	border-radius: 30px;
@@ -90,6 +100,10 @@ nav a {
 	/*centrera*/
 }
 
+.searchbar p {
+	font-size: 15px;
+}
+
 .searchbar .magnifying {
 	/*text-decoration: none;*/
 	background: none;
@@ -110,7 +124,8 @@ nav a {
     background-image: url("images/landscape.jpg");
     /*background-image: url("images/river.JPG");*/
     background-size: cover;
-    height: 100vh;
+    background-attachment: fixed;
+    height: 95vh;
     display: flex;
     justify-content: center;
     text-align: left;
@@ -154,15 +169,16 @@ nav a {
 	transform: scale(1.05);
 }
 
-.popular-products {
+.std-margin {
 	margin: 80px;
 }
 
-.popular-products .caption {
+.underline-caption {
 	font-size: 38px;
 	text-decoration: underline;
 	text-underline-offset: 15px;
 	margin-bottom: 40px;
+	text-decoration-color: #D38871;
 }
 
 .popular-products p, strong {
@@ -187,36 +203,111 @@ nav a {
 .product .price {
 	color: #D38871;
 	font-weight: bold;
+	font-size: 22px;
 }
 
 #page-footer {
+	height: 0;
+}
+
+#page-footer-content {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 4vh;
+	margin-top: 3vh;
 	margin-bottom: 1vh;
 }
 
-#page-footer ul li {
+#page-footer-content ul li {
 	font-size: 22px;
 	display: inline-block;
 	list-style-type: none;
 	margin-left: 30px; /* Ökar mellanrummet mellan varje individuell länk */
 }
 
-#page-footer ul li a:hover {
+#page-footer-content ul li a:hover {
 	transition: transform .2s;
 	/*transform: scale(1.1);*/
 	color: #D38871;
 }
 
-#page-footer .line-break {
+#page-footer-content .line-break {
 	  width: 100%;
 }
 
-#page-footer a {
+#page-footer-content a {
 	color: black;
 	text-decoration: none;
+}
+
+.header-caption {
+	font-size: 60px;
+	margin-bottom: 40px;
+	/*background-color: #396E90;*/
+	background-color: #D38871;
+	/*color: #e8e8e8ff;*/
+	color: #efefefff;
+	height: 100px;
+	border-radius: 18px;
+	cursor: pointer;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+	padding-inline: 50px;
+	height: 88px;
+}
+
+/* About */
+
+#about-header {
+	/*background-image: url("images/landscape.jpg");*/
+	background-image: url("images/inside-tent.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: bottom;
+    	background-attachment: fixed;
+	height: 50vh;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	/*padding-left: 37px;*/
+	flex-direction: column;
+}
+
+.center {
+	margin-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.question-text {
+	font-size: 25px;
+	color: #D38871;
+	font-style: italic;
+}
+
+/* Contact */
+
+#contact-header {
+	/*background-image: url("images/landscape.jpg");*/
+	background-image: url("images/vast-landscape.jpg");
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-attachment: fixed;
+	height: 60vh;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	/*padding-left: 37px;*/
+	flex-direction: column;
+}
+
+.contact-bold {
+	font-size: 22px;
+	font-weight: bold;
 }

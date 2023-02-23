@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initia"> <!--Sätter width till samma som användarens enhet-->
+	<link rel="stylesheet" href="style.css" media="all">
+	<title>Contact</title>
+	<script>
+	fetch("nav.html")
+		.then(resp => resp.text())
+		.then(text => {
+			const inc_cont = document.getElementById("navbar");
+			inc_cont.innerHTML = text;
+		})
+
+	fetch("footer.html")
+		.then(resp => resp.text())
+		.then(text => {
+			const inc_cont = document.getElementById("included-footer");
+			inc_cont.innerHTML = text;
+		})
+	</script> 
+</head>
+<body>
+	<div id="navbar"></div> 
+	
+	<header id="contact-header">
+		<div class="header-caption">Contact us</div>
+	</header>
+
+	<div class="std-margin">
+		<!--<div class="underline-caption">Contact us</div>-->
+		<!--<p class="contact-bold">Mail: </p><p><a href="mailto:support@hikers.com">support@hikers.com</a></p>-->
+		<!--<p class="contact-bold">Phone: </p><p><u>344-344-3434</u></p>-->
+		<div class="underline-caption" style="font-size: 34px;">Mail: </div><p><a href="mailto:support@hikers.com">support@hikers.com</a></p>
+		<div class="underline-caption" style="font-size: 34px;">Phone: </div><p><u>344-344-3434</u></p>
+	</div>
+			
+	<div id="included-footer"></div>
+</body>
+</html>

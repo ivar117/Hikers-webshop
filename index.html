@@ -4,87 +4,26 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initia"> <!--Sätter width till samma som användarens enhet-->
 	<link rel="stylesheet" href="style.css" media="all">
-	<title>Hikers webshop</title>
-	<script src="jquery.js"></script> 
+	<title>Home</title>
 	<script> 
-	/* $(function(){
-	  $("#includedContent").load("nav.html"); 
-	}); */
-
 	fetch("nav.html")
 		.then(resp => resp.text())
 		.then(text => {
-			const inc_cont = document.getElementById("includedContent");
+			const inc_cont = document.getElementById("navbar");
+			inc_cont.innerHTML = text;
+		})
+
+	fetch("footer.html")
+		.then(resp => resp.text())
+		.then(text => {
+			const inc_cont = document.getElementById("included-footer");
 			inc_cont.innerHTML = text;
 		})
 	</script> 
 </head>
 <body>
-	<div id="includedContent"></div>
-	<!--<nav>-->
-		<!--[><img class="menu" src="images/bars.png" width="80%"><]-->
-		<!--<div class="menu">-->
-			<!--[><img src="images/bars.svg" width="100%" onmousedown="this.src='images/cross.png';" onmouseup="this.src='images/bars.png';" /><]-->
-			<!--<svg-->
-			   <!--width="37.87394"-->
-			   <!--height="30.737213"-->
-			   <!--viewBox="0 0 10.020813 8.1325549"-->
-			   <!--version="1.1"-->
-			   <!--id="svg5"-->
-			   <!--xml:space="preserve"-->
-			   <!--xmlns="http://www.w3.org/2000/svg"-->
-			   <!--xmlns:svg="http://www.w3.org/2000/svg"><defs-->
-			     <!--id="defs2" /><g-->
-			     <!--id="layer4"-->
-			     <!--transform="translate(-646.64526,34.045156)"><rect-->
-			       <!--style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.2022;stroke-opacity:1"-->
-			       <!--id="rect16797-59-6"-->
-			       <!--width="10.020843"-->
-			       <!--height="1.7132852"-->
-			       <!--x="646.64526"-->
-			       <!--y="-34.045155" /><rect-->
-			       <!--style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.2022;stroke-opacity:1"-->
-			       <!--id="rect16797-2-4-7"-->
-			       <!--width="10.020843"-->
-			       <!--height="1.7132852"-->
-			       <!--x="646.64526"-->
-			       <!--y="-27.625887" /><rect-->
-			       <!--style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.2022;stroke-opacity:1"-->
-			       <!--id="rect16797-5-9-5"-->
-			       <!--width="10.020843"-->
-			       <!--height="1.7132852"-->
-			       <!--x="646.64526"-->
-			       <!--y="-30.83552" />-->
-			<!--</svg>-->
-			<!--[><div class="menu-hoverbar"><]-->
-				<!--[><img src="images/menu-hoverbar.png" width="37px"><]-->
-			<!--[></div><]-->
-		<!--</div>-->
 
-		<!--<a class="logo" href="index.html">-->
-			<!--<div class="logoimg">-->
-				<!--<img src="images/logo.png" width="95%">-->
-			<!--</div>-->
-			<!--<div class="logotxt">-->
-				<!--<h1>Hikers</h1>-->
-			<!--</div>-->
-		<!--</a>-->
-
-		<!--<div class="searchbar">-->
-			<!--<p>Search for over 1 product...</p>-->
-			<!--<button class="magnifying">-->
-					<!--<img src="images/blackmagnify.svg" width="20px">-->
-			<!--</button>-->
-			
-		<!--</div>-->
-
-		<!--<div class="shopcart">-->
-			<!--<div class="counter">0</div>-->
-			<!--<img src="images/cart.png" width="32%">-->
-			<!--[><img src="images/cart.png" width="30%" height="30%"><]-->
-		<!--</div>-->
-
-	<!--</nav>-->
+	<div id="navbar"></div> 
 
 	<header id="page-header">
 		<div class="header-text">
@@ -98,13 +37,13 @@
 		</div>
 	</header>
 
-	<div class="popular-products">
-		<h1 class="caption">Popular products</h1>
+	<div class="std-margin">
+		<div class="underline-caption">Popular products</div>
 		<div class="products">
 			<div class="product">
 				<img src="images/products/windows-xp.jpg" width="500px">
 				<p>Official Windows XP wallpaper</p>
-				<strong class="price">749:-</strong>
+				<div class="price">749:-</div>
 			</div>
 
 			<div class="product">
@@ -116,35 +55,11 @@
 			<div class="product">
 				<img src="images/products/windows-xp.jpg" width="500px">
 				<p>Official Windows XP wallpaper</p>
-				<strong class="price">749:-</strong>
+				<div class="price">749:-</div>
 			</div>
 		</div>
 	</div>
 
-	<hr>
-
-	<footer id="page-footer">
-		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="shop.html">Shop</a></li>
-			<li><a href="contact.html">Contact</a></li>
-			<li><a href="about.html">About</a></li>
-			<!--<a href="shipping.html"><li>Shipping</li></a>-->
-			<li><a href="faq.html">F.A.Q</a></li>
-			<li>Cart</li>
-			<!--<a href=""><li>Cart</li></a>-->
-		</ul>
-
-		<div class="line-break"></div>
-
-		<a class="logo" href="index.html">
-			<div class="logoimg">
-				<img src="images/logo.png" width="95%">
-			</div>
-			<div class="logotxt">
-				<h1>Hikers</h1>
-			</div>
-		</a>
-	</footer>
+	<div id="included-footer"></div>
 </body>
 </html>
