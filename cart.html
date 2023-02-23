@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initia"> <!--Sätter width till samma som användarens enhet-->
+	<link rel="stylesheet" href="style.css" media="all">
+	<title><++></title>
+	<script>
+	fetch("include/nav.html")
+		.then(resp => resp.text())
+		.then(text => {
+			const inc_cont = document.getElementById("navbar");
+			inc_cont.innerHTML = text;
+		})
+
+	fetch("include/footer.html")
+		.then(resp => resp.text())
+		.then(text => {
+			const inc_cont = document.getElementById("included-footer");
+			inc_cont.innerHTML = text;
+		})
+	</script> 
+</head>
+<body>
+	<div id="navbar"></div> 
+
+	<div id="included-footer"></div>
+</body>
+</html>

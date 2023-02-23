@@ -1,5 +1,3 @@
-@import url('https://code.cdn.mozilla.net/fonts/fira.css'); /* Sourcar fonten som jag använder */
-
 body {
 	margin: 0px;
 	padding: 0px;
@@ -10,41 +8,44 @@ body {
 	font-size: 23px;
 }
 
-html {
-	height: 100%;
-	width: 100%;
-}
-
-nav {
+#topbar {
 	display: flex;
 	margin: 0px;
 	background: #f9f9f9ff;
 	align-items: center;
 	justify-content: center;
 	color: black;	
-	height: 94px;
+	max-height: 94px;
 }
 
 a {
 	color: black;
 }
 
-nav a {
+#topbar a {
 	text-decoration: none;
+}
+
+button:hover {
+	transition: transform .2s;
+	opacity: 0.8;
 }
 
 .menu {
 	padding-left: 37px;
 	/*padding-top: 20px;*/
-}
 
+}
 .menu:hover {
 	transition: transform .2s;
 	transform: scale(1.05); /* Resize */
 }
 
-.menu:active {
-	body opacity: 0.8;
+.sidemenu {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	color: white;
 }
 
 .logo {
@@ -60,12 +61,11 @@ nav a {
 }
 
 .logoimg {
-	flex-basis: 40%;
 	padding-bottom: 10px;
 }
 
 .logotext {
-	font-size: 27px;
+	font-size: 25px;
 	padding-left: 8px;
 }
 
@@ -109,9 +109,13 @@ nav a {
 	/*centrera*/
 }
 
-.searchbar p {
+#searchinput {
 	font-size: 17px;
+	color: black;
 	opacity: 1.0;
+	background: none;
+	border-width: 0;
+	outline: none;
 }
 
 .searchbar .magnifying {
@@ -164,23 +168,16 @@ nav a {
 }
 
 #page-header button {
-	height: 50px;
-	border-radius: 12px;
+	background-color: #D38871;
 	cursor: pointer;
 	border: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	border-radius: 12px;
+	height: 50px;
 	padding-inline: 14px;
-	/*padding-inline: 8px;*/
-	background-color: #D38871;
 	margin-top: 20px;
-}
-
-
-#page-header button:hover {
-	transition: transform .2s;
-	transform: scale(1.05);
+	/*display: flex;*/
+	/*align-items: center;*/
+	/*justify-content: center;*/
 }
 
 .std-margin {
@@ -200,10 +197,8 @@ nav a {
 
 .products {
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
 	flex-wrap: wrap;
-	margin-top: 60px;
+	/*margin-top: 60px;*/
 }
 
 .product {
@@ -213,6 +208,8 @@ nav a {
 	border-width: 2px;
 	border-color: #D38871;
 	width: 28vh;
+	margin-inline: 120px;
+	margin-top: 50px;
 }
 
 .product button {
@@ -227,19 +224,23 @@ nav a {
 	display: flex;
 	margin-left: auto;
 	align-items: center;
+	border-width: 0;
 }
 
 .product img {
 	object-fit: cover;
+	object-position: bottom;
 	max-width: 100%; 
 	/*max-height: 22vh;*/
 	height: 27vh;
+	border-style: solid;
+	border-radius: 15px;
+	border-width: 0;
 }
 
-.product button:hover {
+.product:hover {
 	transition: transform .2s;
 	transform: scale(1.05); /* Resize */
-
 }
 
 .product .price {
