@@ -6,14 +6,14 @@
 	<link rel="stylesheet" href="style.css" media="all">
 	<title><++></title>
 	<script>
-	fetch("nav.html")
+	fetch("include/nav.html")
 		.then(resp => resp.text())
 		.then(text => {
 			const inc_cont = document.getElementById("navbar");
 			inc_cont.innerHTML = text;
 		})
 
-	fetch("footer.html")
+	fetch("include/footer.html")
 		.then(resp => resp.text())
 		.then(text => {
 			const inc_cont = document.getElementById("included-footer");

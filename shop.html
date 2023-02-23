@@ -6,19 +6,20 @@
 	<link rel="stylesheet" href="style.css" media="all">
 	<title>Shop</title>
 	<script> 
-	fetch("nav.html")
+	fetch("include/nav.html")
 		.then(resp => resp.text())
 		.then(text => {
 			const inc_cont = document.getElementById("navbar");
 			inc_cont.innerHTML = text;
 		})
 
-	fetch("footer.html")
+	fetch("include/footer.html")
 		.then(resp => resp.text())
 		.then(text => {
 			const inc_cont = document.getElementById("included-footer");
 			inc_cont.innerHTML = text;
 		})
+
 	</script> 
 </head>
 <body>
@@ -27,10 +28,29 @@
 	<div class="std-margin">
 		<div class="underline-caption">All products</div>
 		<div class="products">
+			<div class="product">
+				<img src="images/products/boots.jpg" width="400px" alt="boots">
+				<p>Green hiking boots</p>
+				<div class="price">549:-</div>
+				<button><p>Add to cart</p></button>
+			</div>
 
+			<div class="product">
+				<img src="images/products/swissarmy2.jpg" width="400px" alt="swiss army knife">
+				<p>Swiss army knife</p>
+				<div class="price">199:-</div>
+				<button><p>Add to cart</p></button>
+			</div>
+
+			<div class="product">
+				<img src="images/products/simple-green-backpack.jpg" width="400px" height="auto" alt="simple green backpack">
+				<p>Simple green backpack</p>
+				<div class="price">749:-</div>
+				<button><p>Add to cart</p></button>
+			</div>
 		</div>
 	</div>
 
-	<!--<div id="included-footer"></div>-->
+	<div id="included-footer"></div>
 </body>
 </html>

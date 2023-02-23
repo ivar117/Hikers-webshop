@@ -6,14 +6,14 @@
 	<link rel="stylesheet" href="style.css" media="all">
 	<title>Home</title>
 	<script> 
-	fetch("nav.html")
+	fetch("include/nav.html")
 		.then(resp => resp.text())
 		.then(text => {
 			const inc_cont = document.getElementById("navbar");
 			inc_cont.innerHTML = text;
 		})
 
-	fetch("footer.html")
+	fetch("include/footer.html")
 		.then(resp => resp.text())
 		.then(text => {
 			const inc_cont = document.getElementById("included-footer");
@@ -27,11 +27,11 @@
 
 	<header id="page-header">
 		<div class="header-text">
-			<h1>We want you to succeed on your hike<br>
-				with quality products.</h1>
+			<div class="largetext">We want you to succeed on your hike<br>
+				with quality products.</div>
 			<a href="shop.html">
 				<button>
-					<h3>Start shopping now</h3> <!--Gör om till en knapp box grej-->
+					<div class="buttontext">Start shopping now</div> <!--Gör om till en knapp box grej-->
 				</button>
 			</a>
 		</div>
@@ -41,21 +41,24 @@
 		<div class="underline-caption">Popular products</div>
 		<div class="products">
 			<div class="product">
-				<img src="images/products/windows-xp.jpg" width="500px">
-				<p>Official Windows XP wallpaper</p>
-				<div class="price">749:-</div>
+				<img src="images/products/boots.jpg" width="400px" alt="boots">
+				<p>Green hiking boots</p>
+				<div class="price">549:-</div>
+				<button><p>Add to cart</p></button>
 			</div>
 
 			<div class="product">
-				<img src="images/products/thiccpad.gif" width="400px">
-				<p>Official Lenovo Thiccpad</p>
-				<div class="price">1499:-</div>
+				<img src="images/products/swissarmy2.jpg" width="400px" alt="swiss army knife">
+				<p>Swiss army knife</p>
+				<div class="price">199:-</div>
+				<button><p>Add to cart</p></button>
 			</div>
 
 			<div class="product">
-				<img src="images/products/windows-xp.jpg" width="500px">
-				<p>Official Windows XP wallpaper</p>
+				<img src="images/products/simple-green-backpack.jpg" width="400px" height="auto" alt="simple green backpack">
+				<p>Simple green backpack</p>
 				<div class="price">749:-</div>
+				<button><p>Add to cart</p></button>
 			</div>
 		</div>
 	</div>

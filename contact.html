@@ -6,14 +6,14 @@
 	<link rel="stylesheet" href="style.css" media="all">
 	<title>Contact</title>
 	<script>
-	fetch("nav.html")
+	fetch("include/nav.html")
 		.then(resp => resp.text())
 		.then(text => {
 			const inc_cont = document.getElementById("navbar");
 			inc_cont.innerHTML = text;
 		})
 
-	fetch("footer.html")
+	fetch("include/footer.html")
 		.then(resp => resp.text())
 		.then(text => {
 			const inc_cont = document.getElementById("included-footer");
@@ -32,6 +32,7 @@
 		<!--<div class="underline-caption">Contact us</div>-->
 		<!--<p class="contact-bold">Mail: </p><p><a href="mailto:support@hikers.com">support@hikers.com</a></p>-->
 		<!--<p class="contact-bold">Phone: </p><p><u>344-344-3434</u></p>-->
+		<p>Feel free to contact us about any issues you may have:</p>
 		<div class="underline-caption" style="font-size: 34px;">Mail: </div><p><a href="mailto:support@hikers.com">support@hikers.com</a></p>
 		<div class="underline-caption" style="font-size: 34px;">Phone: </div><p><u>344-344-3434</u></p>
 	</div>

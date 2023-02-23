@@ -1,10 +1,12 @@
+@import url('https://code.cdn.mozilla.net/fonts/fira.css'); /* Sourcar fonten som jag använder */
+
 body {
 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
 	color: black;
-	/*font-family: sans-serif;*/
-	font-family: 'Fira Sans', sans-serif;
+	/*font-family: 'Fira Sans', sans-serif;*/
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 23px;
 }
 
@@ -23,7 +25,6 @@ nav {
 	height: 94px;
 }
 
-
 a {
 	color: black;
 }
@@ -37,12 +38,13 @@ nav a {
 	/*padding-top: 20px;*/
 }
 
-/*.menu:hover .menu-hoverbar{*/
 .menu:hover {
-	/*transition: 0.5s;*/
 	transition: transform .2s;
 	transform: scale(1.05); /* Resize */
-	opacity: 1.0;
+}
+
+.menu:active {
+	body opacity: 0.8;
 }
 
 .logo {
@@ -62,7 +64,7 @@ nav a {
 	padding-bottom: 10px;
 }
 
-.logotxt {
+.logotext {
 	font-size: 27px;
 	padding-left: 8px;
 }
@@ -87,7 +89,13 @@ nav a {
 	left: 57px;
 }
 
+.shopcart:hover {
+	transition: transform .2s;
+	transform: scale(1.05); /* Resize */
+}
+
 .searchbar {
+	opacity: 0.8;
 	display: flex;
 	background-color: #b3b3b3ff;
 	color: white;
@@ -97,15 +105,18 @@ nav a {
 	margin-right: auto;
 	justify-content: center;
 	align-items: center;
+	height: 43px;
 	/*centrera*/
 }
 
 .searchbar p {
-	font-size: 15px;
+	font-size: 17px;
+	opacity: 1.0;
 }
 
 .searchbar .magnifying {
 	/*text-decoration: none;*/
+	opacity:  1.0;
 	background: none;
 	color: inherit;
 	border: none;
@@ -138,12 +149,12 @@ nav a {
 	margin-bottom: 31vh;
 }
 
-#page-header h1 {
+#page-header .largetext {
 	color: white;
 	font-size: 40px;
 }
 
-#page-header h3 {
+#page-header .buttontext {
 	font-size: 22px;
 	color: white;
 }
@@ -160,9 +171,12 @@ nav a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	padding-inline: 14px;
 	/*padding-inline: 8px;*/
 	background-color: #D38871;
+	margin-top: 20px;
 }
+
 
 #page-header button:hover {
 	transition: transform .2s;
@@ -176,8 +190,7 @@ nav a {
 .underline-caption {
 	font-size: 38px;
 	text-decoration: underline;
-	text-underline-offset: 15px;
-	margin-bottom: 40px;
+	text-underline-offset: 12px;
 	text-decoration-color: #D38871;
 }
 
@@ -187,17 +200,46 @@ nav a {
 
 .products {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
+	flex-wrap: wrap;
+	margin-top: 60px;
 }
 
 .product {
-	/*display: inline-block;*/
 	padding: 30px;
 	border-radius: 20px;
-	border-style: dotted;
+	border-style: solid;
+	border-width: 2px;
 	border-color: #D38871;
-	margin-left: 50px; /* Ökar mellanrummet mellan varje individuell länk */
+	width: 28vh;
+}
+
+.product button {
+	background-color: #D38871;
+	font-size: 22px;
+	color: white;
+	border: none;
+	border-radius: 12px;
+	height: 50px;
+	cursor: pointer;
+	padding-inline: 12px;
+	display: flex;
+	margin-left: auto;
+	align-items: center;
+}
+
+.product img {
+	object-fit: cover;
+	max-width: 100%; 
+	/*max-height: 22vh;*/
+	height: 27vh;
+}
+
+.product button:hover {
+	transition: transform .2s;
+	transform: scale(1.05); /* Resize */
+
 }
 
 .product .price {
@@ -277,12 +319,6 @@ nav a {
 	text-align: center;
 	/*padding-left: 37px;*/
 	flex-direction: column;
-}
-
-.center {
-	margin-top: 40px;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 .question-text {

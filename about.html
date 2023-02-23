@@ -6,14 +6,14 @@
 	<link rel="stylesheet" href="style.css" media="all">
 	<title>Home</title>
 	<script> 
-	fetch("nav.html")
+	fetch("include/nav.html")
 		.then(resp => resp.text())
 		.then(text => {
 			const inc_cont = document.getElementById("navbar");
 			inc_cont.innerHTML = text;
 		})
 
-	fetch("footer.html")
+	fetch("include/footer.html")
 		.then(resp => resp.text())
 		.then(text => {
 			const inc_cont = document.getElementById("included-footer");
@@ -29,14 +29,18 @@
 
 	<div class="std-margin">
 		<!--<div class="underline-caption">About us</div>-->
-		<p>We founded this company because of our passion for the outdoors</p>
+		<p>We founded this small company because of our passion for the outdoors,<br>
+		and wanting others to succeed on their own journeys.
+		</p>
 
 		<div class="underline-caption">Frequently Asked Questions</div>
 
 		<p class="question-text">How long does shipping take?</p>
-		<p>It will usually take up to 1-2 business days.</p>
+		<p>It will usually take up to 4-5 business days.</p>
 		<p class="question-text">What is your return policy?</p>
-		<p>We </p>
+		<p>We accept returns within 14 days of initial delivery.</p>
+		<p class="question-text">What is privacy policy?</p>
+		<p>At Hikers we care a lot about our customers data.</p>
 	</div>
 
 	<div id="included-footer"></div>
