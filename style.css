@@ -1,13 +1,14 @@
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
-	color: white;
-	font-family: sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
+	color: black;
+	/*font-family: sans-serif;*/
+	font-family: 'Fira Sans', sans-serif; /* Sätter fonten */
 }
 
 nav {
@@ -28,22 +29,14 @@ nav a {
 
 .menu {
 	padding-left: 37px;
-	padding-top: 20px; /*Bättre lösning?*/
+	/*padding-top: 20px;*/
 }
 
-.menu-hoverbar {
-	position: relative;
-	opacity: 0.0;
-	-webkit-transition: all 500ms ease-in-out;
-	-moz-transition: all 500ms ease-in-out;
-	-ms-transition: all 500ms ease-in-out;
-	-o-transition: all 500ms ease-in-out;
-	transition: all 500ms ease-in-out;
-}
-
-.menu:hover .menu-hoverbar{
-	transition: 0.5s;
-	/*display: block;*/
+/*.menu:hover .menu-hoverbar{*/
+.menu:hover {
+	/*transition: 0.5s;*/
+	transition: transform .2s;
+	transform: scale(1.05); /* Resize */
 	opacity: 1.0;
 }
 
@@ -54,6 +47,11 @@ nav a {
 	margin-left: 120px; /* Om det är padding så blir paddingen en del av linken */
 }
 
+.logo:hover {
+	transition: transform .2s;
+	transform: scale(1.05); /* Resize */
+}
+
 .logoimg {
 	flex-basis: 40%;
 	padding-bottom: 10px;
@@ -61,19 +59,29 @@ nav a {
 
 .logotxt {
 	font-size: 27px;
-	padding-left: 12px;
+	padding-left: 8px;
 }
 
 .shopcart {
 	margin-left: auto;
 }
 
+.shopcart .counter{
+	margin-top: 20px;
+	background-color: #D38871;
+	border-radius: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 27px;
+	height: 27px;
+}
+
 .searchbar {
 	display: flex;
-	background-color: black;
+	background-color: #b3b3b3ff;
 	color: white;
-	border-radius: 22px;
-	/*border-style:unset;*/
+	border-radius: 20px;
 	padding-inline: 20px;
 	margin-left: auto;
 	margin-right: auto;
@@ -90,16 +98,17 @@ nav a {
 	cursor: pointer;
 	margin-left: auto;
 	/*margin-left: 150px;*/
-	margin-left: 200px;
+	margin-left: 220px;
 }
 
 .searchbar p {
-	color: #b3b3b3ff;
+	/*color: #b3b3b3ff;*/
+	color: black;
 }
 
-#start-header{
+#page-header{
     background-image: url("images/landscape.jpg");
-    width: 100%;
+    /*background-image: url("images/river.JPG");*/
     background-size: cover;
     height: 100vh;
     display: flex;
@@ -109,19 +118,105 @@ nav a {
     flex-direction: column;
 }
 
-#start-header .header-text {
+#page-header .header-text {
 	/*margin-bottom: 340px;*/
-	margin-bottom: 38vh;
+	margin-bottom: 31vh;
 }
 
-#start-header h2 {
+#page-header h1 {
+	color: white;
 	font-size: 40px;
 }
 
-#start-header h3 {
-	font-size: 27px
+#page-header h3 {
+	font-size: 22px;
+	color: white;
 }
 
-#start-header button {
+#page-header a{
+	text-decoration: none;
+}
+
+#page-header button {
+	height: 50px;
+	border-radius: 12px;
 	cursor: pointer;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/*padding-inline: 8px;*/
+	background-color: #D38871;
+}
+
+#page-header button:hover {
+	transition: transform .2s;
+	transform: scale(1.05);
+}
+
+.popular-products {
+	margin: 80px;
+}
+
+.popular-products .caption {
+	font-size: 38px;
+	text-decoration: underline;
+	text-underline-offset: 15px;
+	margin-bottom: 40px;
+}
+
+.popular-products p, strong {
+	font-size: 20px;
+}
+
+.products {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.product {
+	/*display: inline-block;*/
+	padding: 30px;
+	border-radius: 20px;
+	border-style: dotted;
+	border-color: #D38871;
+	margin-left: 50px; /* Ökar mellanrummet mellan varje individuell länk */
+}
+
+.product .price {
+	color: #D38871;
+	font-weight: bold;
+}
+
+#page-footer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 4vh;
+	margin-bottom: 1vh;
+}
+
+#page-footer ul li {
+	font-size: 22px;
+	display: inline-block;
+	list-style-type: none;
+	margin-left: 30px; /* Ökar mellanrummet mellan varje individuell länk */
+}
+
+#page-footer ul li a:hover {
+	transition: transform .2s;
+	/*transform: scale(1.1);*/
+	color: #D38871;
+}
+
+#page-footer .line-break {
+	  width: 100%;
+}
+
+#page-footer a {
+	color: black;
+	text-decoration: none;
 }
