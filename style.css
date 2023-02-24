@@ -296,6 +296,7 @@ button:hover {
 	max-width: 100%; 
 	/*max-height: 22vh;*/
 	height: 27vh;
+	width: 100%;
 	border-style: solid;
 	border-radius: 15px;
 	border-width: 0;
