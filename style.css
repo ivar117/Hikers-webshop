@@ -217,10 +217,10 @@ button:hover {
 	font-size: 40px;
 }
 
-#page-header .buttontext {
-	font-size: 22px;
-	color: white;
-}
+/*#page-header .buttontext {*/
+	/*font-size: 22px;*/
+	/*color: white;*/
+/*}*/
 
 #page-header button {
 	background-color: #D38871;
@@ -229,6 +229,8 @@ button:hover {
 	height: 50px;
 	padding-inline: 14px;
 	margin-top: 20px;
+	font-size: 22px;
+	color: white;
 	/*display: flex;*/
 	/*align-items: center;*/
 	/*justify-content: center;*/
