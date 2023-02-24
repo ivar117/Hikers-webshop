@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initia"> <!--Sätter width till samma som användarens enhet-->
+	<meta name="viewport" content="width=device-width initial-scale=1">
 	<link rel="stylesheet" href="style.css" media="all">
 	<title>Home</title>
 
@@ -62,31 +62,39 @@
 			<div class="largetext">We want you to succeed on your hike<br>
 				with quality products.</div>
 			<a href="shop.html">
-				<button>
-					<div class="buttontext">Start shopping now</div> <!--Gör om till en knapp box grej-->
+				<button href="shop.html">
+					<div class="buttontext">Start shopping now</div>
 				</button>
+			</a>
+			<a href="#popular-products">
+				<button>
+					<div class="buttontext">Popular products</div>
+				</button>
+				<!--<a href="#popular-products" class="underline-caption" style="color: white; font-size: 28px; margin-top: 40px;">-->
+					<!--Popular products-->
+				<!--</a>-->
 			</a>
 		</div>
 	</header>
 
-	<div class="std-margin">
+	<div class="std-margin" id="popular-products">
 		<div class="underline-caption">Popular products</div>
 		<div class="products">
 			<div class="product">
 				<img src="images/products/brownboots.jpg" width="400px" alt="brown boots">
 				<p>Quality brown boots</p>
 				<div class="price">1499kr</div>
-				<button href="javascript:;" onclick="simpleCart.add({name: 'Swiss army knife' , price: 199, quantity: 1});">
-					<p>Add To Cart</p>
+				<button href="javascript:;" onclick="simpleCart.add({name: 'Brown boots' , price: 1499, quantity: 1});">
+					Add To Cart
 				</button>
 			</div>
 
 			<div class="product">
-				<img src="images/products/swissarmy2.jpg" width="400px" alt="swiss army knife">
+				<img src="images/products/swissarmy.jpg" width="400px" alt="swiss army knife">
 				<p>Swiss army knife</p>
 				<div class="price">199kr</div>
 				<button href="javascript:;" onclick="simpleCart.add({name: 'Swiss army knife' , price: 199, quantity: 1});">
-					<p>Add To Cart</p>
+					Add To Cart
 				</button>
 			</div>
 
@@ -95,7 +103,7 @@
 				<p>Simple green backpack</p>
 				<div class="price">949kr</div>
 				<button href="javascript:;" onclick="simpleCart.add({name: 'Simple green backpack' , price: 949, quantity: 1});">
-					<p>Add To Cart</p>
+					Add To Cart
 				</button>
 			</div>
 		</div>

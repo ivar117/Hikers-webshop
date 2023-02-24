@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initia"> <!--Sätter width till samma som användarens enhet-->
+	<meta name="viewport" content="width=device-width initial-scale=1">
 	<link rel="stylesheet" href="style.css" media="all">
-	<title>Home</title>
+	<title>Cart</title>
 	<script>
 	        function openNav() {
 	        	document.getElementById("mySidenav").style.width = "250px";
@@ -31,15 +31,42 @@
 			cartColumns: [
 			        { attr: "name", label: "Name"},
 			        { view: "currency", attr: "price", label: "Price"},
-			        { view: "decrement", label: false},
 			        { attr: "quantity", label: "Quantity"},
-			        { view: "increment", label: false},
 			        { view: "currency", attr: "total", label: "Subtotal" },
-			        { view: "remove", text: "Remove", label: false}
-		        ],
-			cartStyle: "table", 
+				{ view: function(item, column) { //Custom decrement: om man har totalt en item kvar så uppdateras sidan så att emptycart.html sourcas
+				           //var price = item.quantity()
+				           //var id = item.get('id')
+				          // return `<div contenteditable="true" onkeyup="myFunction(this)" id="${id}" class="total-element">${price}</div>`
+					if (simpleCart.quantity() == 1) {
+						return '<div class="item-decrement "><a href="javascript:;" onclick="empty_cart()">-</a></div>'
+					}
+					else {
+						return '<div class="item-decrement "><a href="javascript:;" class="simpleCart_decrement">-</a></div>'
+					}
+					
+				       } , attr: "custom", label: false},
+			        { view: "increment", label: false, text: "+"},
+				{ view: function(item, column) { //Custom increment: om man har totalt en item kvar så uppdateras sidan så att emptycart.html sourcas
+					// for loop / if statement för att veta om endast en sorts item finns.
+					//if (simpleCart.quantity() == simpleCart.item.get("quantity"))
+					var items = []
+					simpleCart.each(function( item , x ){
+    						items.push( item.name );
+					});
 
-			excludeFromCheckout: [""],
+					if (simpleCart.quantity() == 1) {
+						return '<div class="item-remove "><a href="javascript:;" onclick="empty_cart()">Remove</a></div>'
+					}
+					else if (items.length == 1) { //Om det bara finns en produkt totalt, oberoende av hur många av den produkten:
+						return '<div class="item-remove "><a href="javascript:;" onclick="empty_cart()">Remove</a></div>'
+					}
+					else {
+						return '<div class="item-remove "><a href="javascript:;" class="simpleCart_remove">Remove</a></div>'
+					}
+					
+				       } , attr: "Custom", label: false},
+		        ],
+			cartStyle: "table",
 		});	
 		simpleCart.currency( "SEK" ); 
 
@@ -75,7 +102,7 @@
 			console.log(simpleCart.quantity())
 			if (simpleCart.quantity() == 0)
 			{
-				fetch("emptycart.html")
+				fetch("include/emptycart.html")
 					.then(resp => resp.text())
 					.then(text => {
 						inc_cont = document.getElementById("cart-content");
@@ -85,7 +112,7 @@
 			else if (simpleCart.quantity() > 0) 
 			//else
 			{
-				fetch("normalcart.html")
+				fetch("include/normalcart.html")
 					.then(resp => resp.text())
 					.then(text => {
 						inc_cont = document.getElementById("cart-content");
