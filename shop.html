@@ -20,11 +20,20 @@
 			inc_cont.innerHTML = text;
 		})
 
+	        function openNav() {
+	        	document.getElementById("mySidenav").style.width = "250px";
+	        }
+	              
+	        function closeNav() {
+	        	document.getElementById("mySidenav").style.width = "0";
+	        }
 	</script> 
 </head>
 <body>
 	<div id="navbar"></div>
-
+	<header id="shop-header">
+		<div class="header-caption">Shop</div>
+	</header>
 	<div class="std-margin">
 		<div class="underline-caption">All products</div>
 		<div class="products">

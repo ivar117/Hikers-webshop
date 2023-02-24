@@ -15,7 +15,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	color: black;	
-	max-height: 94px;
+	height: 94px;
 }
 
 a {
@@ -36,16 +36,46 @@ button:hover {
 	/*padding-top: 20px;*/
 
 }
+
 .menu:hover {
 	transition: transform .2s;
 	transform: scale(1.05); /* Resize */
 }
 
-.sidemenu {
+.sidenav {
+	background-color: white;
 	height: 100%;
-	display: flex;
-	justify-content: center;
-	color: white;
+	width: 0;
+	position: fixed;
+	z-index: 1; /* Stay on top */
+	top: 0; /* Stay at the top */
+	left: 0;
+	overflow-x: hidden; /* Disable horizontal scroll */
+	padding-top: 60px; /* Place content 60px from the top */
+	transition: 0.5s;
+}
+
+.sidenav a {
+	padding: 8px 8px 8px 32px;
+	color: black;
+	text-decoration: none;
+	font-size: 25px;
+	display: block;
+	transition: 0.3s;
+}
+
+.sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+.sidenav a:hover {
+	transition: transform .2s;
+	/*transform: scale(1.1);*/
+	color: #D38871;
 }
 
 .logo {
@@ -314,7 +344,7 @@ button:hover {
 	background-repeat: no-repeat;
 	background-position: bottom;
     	background-attachment: fixed;
-	height: 50vh;
+	height: 60vh;
 	display: flex;
 	justify-content: center;
 	text-align: center;
@@ -347,4 +377,20 @@ button:hover {
 .contact-bold {
 	font-size: 22px;
 	font-weight: bold;
+}
+
+/* Shop */
+
+#shop-header {
+	background-image: url("images/woods.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: bottom;
+    	background-attachment: fixed;
+	height: 60vh;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	/*padding-left: 37px;*/
+	flex-direction: column;
 }
