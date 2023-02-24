@@ -90,6 +90,7 @@
 					.then(text => {
 						inc_cont = document.getElementById("cart-content");
 						inc_cont.innerHTML = text;
+						simpleCart.update()
 					})
 			}
 		}
@@ -108,10 +109,6 @@
 
 	<script> 
 		// Uppdatera script
-    		document.getElementById("cart-content").innerHTML='<object type="text/html" data="side.html" ></object>';
-	</script>
-
-	<script> 
     		document.getElementById("cart-content").innerHTML='<object type="text/html" data="side.html" ></object>';
 	</script>
 
