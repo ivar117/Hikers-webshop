@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initia"> <!--Sätter width till samma som användarens enhet-->
+	<link rel="stylesheet" href="style.css" media="all">
+	<title>Home</title>
+
+	<script>
+	        function openNav() {
+	        	document.getElementById("mySidenav").style.width = "250px";
+			//document.getElementsByTagName("body")[0].style.opacity = "0.8";
+	        }
+	              
+	        function closeNav() {
+	        	document.getElementById("mySidenav").style.width = "0";
+			//document.getElementsByTagName("body")[0].style.opacity = "1.0";
+	        }
+	</script>
+
+	<script> //cart funktion
+		document.write('<script src="script/jquery.1.6.1.min.js"><\/script>');
+		document.write('<script src="script/simpleCart.js"><\/script>');
+	</script>
+
+	<script>
+		simpleCart({
+			checkout: { 
+				type: "PayPal" , 
+				email: "you@yours.com",
+			}
+		});	
+		simpleCart.currency( "SEK" ); 
+	</script>
+
+	<script> 
+	fetch("include/nav.html")
+		.then(resp => resp.text())
+		.then(text => {
+			const inc_cont = document.getElementById("navbar");
+			inc_cont.innerHTML = text;
+		})
+
+	fetch("include/footer.html")
+		.then(resp => resp.text())
+		.then(text => {
+			const inc_cont = document.getElementById("included-footer");
+			inc_cont.innerHTML = text;
+		})
+	</script> 
+</head>
+<body>
+	<div id="navbar"></div> 
+
+	<script> 
+		// Uppdaterar cart quantity, annars är den tom när refershar:
+    		document.getElementById("navbar").innerHTML='<object type="text/html" data="side.html" ></object>';
+	</script>
+	
+	<section id="std-backgroundimage" style="background-image: url('images/mounatins.jpg'); height: 95vh; background-position: top">
+		<div class="bgimage-caption">Thanks for shopping with us!</div>
+	</section>
+	
+	<script>
+		simpleCart.empty();
+	</script>
+
+	<br>
+	<br>
+	<br>
+
+	<div id="included-footer"></div>
+</body>
+</html>

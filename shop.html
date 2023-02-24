@@ -55,22 +55,44 @@
 	<script> 
 		// Uppdaterar cart quantity, annars är den tom när refershar:
     		document.getElementById("navbar").innerHTML='<object type="text/html" data="side.html" ></object>';
+
+		function search(input) {
+			requestAnimationFrame(() => {
+				const query = input.value.toLowerCase();
+				const products = document.getElementsByClassName("product");
+				for (const product of products) {
+					const name = product.getElementsByTagName("p")[0].innerText.toLowerCase();
+					console.log(query, name);
+					if (!name.includes(query)) {
+						product.style.display = "none";
+					} else {
+						product.style.display = "block";
+					}
+				}
+
+				if (query === "") {
+					for (const product of products) {
+						product.style.display = "block";
+					}
+				}
+			})
+		}
 	</script>
 
 	<section id="std-backgroundimage" style="background-image: url('images/woods.jpg');">
 		<div class="bgimage-caption">Shop</div>
 	</section>
 
-	<div class="searchbar">
-		<!--<p>Search for over 1 product...</p>-->
-		<input id="searchinput" type="text" placeholder="Search for over 1 product..."></input>
-		<button class="magnifying">
-				<img src="images/blackmagnify.svg" width="20px" alt="magnifying glas">
-		</button>
-	</div>
-
 	<div class="std-margin">
 		<div class="underline-caption">All products</div>
+		<div class="searchbar">
+			<!--<p>Search for over 1 product...</p>-->
+			<input id="searchinput" type="text" placeholder="Search for over 1 product..." onkeydown="search(this)"/>
+			<button class="magnifying">
+					<img src="images/blackmagnify.svg" width="20px" alt="magnifying glas">
+			</button>
+		</div>
+
 		<div class="products">
 			<div class="product">
 				<img src="images/products/brownboots.jpg" width="400px" alt="brown boots">
