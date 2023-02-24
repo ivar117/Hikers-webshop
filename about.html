@@ -5,6 +5,34 @@
 	<meta name="viewport" content="width=device-width, initia"> <!--Sätter width till samma som användarens enhet-->
 	<link rel="stylesheet" href="style.css" media="all">
 	<title>Home</title>
+
+	<script>
+	        function openNav() {
+	        	document.getElementById("mySidenav").style.width = "250px";
+			//document.getElementsByTagName("body")[0].style.opacity = "0.8";
+	        }
+	              
+	        function closeNav() {
+	        	document.getElementById("mySidenav").style.width = "0";
+			//document.getElementsByTagName("body")[0].style.opacity = "1.0";
+	        }
+	</script>
+
+	<script>
+		document.write('<script src="script/jquery.1.6.1.min.js"><\/script>');
+		document.write('<script src="script/simpleCart.js"><\/script>');
+	</script>
+
+	<script>
+		simpleCart({
+			checkout: { 
+				type: "PayPal" , 
+				email: "you@yours.com",
+			}
+		});	
+		simpleCart.currency( "SEK" ); 
+	</script>
+
 	<script> 
 	fetch("include/nav.html")
 		.then(resp => resp.text())
@@ -19,18 +47,16 @@
 			const inc_cont = document.getElementById("included-footer");
 			inc_cont.innerHTML = text;
 		})
-
-	        function openNav() {
-	        	document.getElementById("mySidenav").style.width = "250px";
-	        }
-	              
-	        function closeNav() {
-	        	document.getElementById("mySidenav").style.width = "0";
-	        }
-	</script>
+	</script> 
 </head>
 <body>
 	<div id="navbar"></div> 
+
+	<script> 
+		// Uppdaterar cart quantity, annars är den tom när refershar:
+    		document.getElementById("navbar").innerHTML='<object type="text/html" data="side.html" ></object>';
+	</script>
+
 	<section id="std-backgroundimage" style="background-image: url('images/inside-tent.jpg');">
 		<div class="bgimage-caption">About us</div>
 	</section>
@@ -47,7 +73,7 @@
 		<p class="paragraph">It will usually take up to 4-5 business days.</p>
 		<p class="question-text">What is your return policy?</p>
 		<p class="paragraph">We accept returns within 14 days of initial delivery.</p>
-		<p class="question-text">What is privacy policy?</p>
+		<p class="question-text">What is your privacy policy?</p>
 		<p class="paragraph">At Hikers we care a lot about our customers privacy. We won't share data with
 		third parties unless required by law. We only store data necessary to fulfill your
 		orders.

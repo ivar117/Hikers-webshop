@@ -4,8 +4,48 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initia"> <!--Sätter width till samma som användarens enhet-->
 	<link rel="stylesheet" href="style.css" media="all">
-	<title><++></title>
+	<title>Home</title>
 	<script>
+	        function openNav() {
+	        	document.getElementById("mySidenav").style.width = "250px";
+			//document.getElementsByTagName("body")[0].style.opacity = "0.8";
+	        }
+	              
+	        function closeNav() {
+	        	document.getElementById("mySidenav").style.width = "0";
+			//document.getElementsByTagName("body")[0].style.opacity = "1.0";
+	        }
+	</script>
+
+	<script>
+		document.write('<script src="script/jquery.1.6.1.min.js"><\/script>');
+		document.write('<script src="script/simpleCart.js"><\/script>');
+	</script>
+
+	<script>
+		simpleCart({
+			checkout: { 
+				type: "PayPal" , 
+				email: "you@yours.com",
+			},
+			cartColumns: [
+			        { attr: "name", label: "Name"},
+			        { view: "currency", attr: "price", label: "Price"},
+			        { view: "decrement", label: false},
+			        { attr: "quantity", label: "Quantity"},
+			        { view: "increment", label: false},
+			        { view: "currency", attr: "total", label: "Subtotal" },
+			        { view: "remove", text: "Remove", label: false}
+		        ],
+			cartStyle: "table", 
+
+			excludeFromCheckout: [""],
+		});	
+		simpleCart.currency( "SEK" ); 
+
+	</script>
+
+	<script> 
 	fetch("include/nav.html")
 		.then(resp => resp.text())
 		.then(text => {
@@ -19,19 +59,57 @@
 			const inc_cont = document.getElementById("included-footer");
 			inc_cont.innerHTML = text;
 		})
-
-	        function openNav() {
-	        	document.getElementById("mySidenav").style.width = "250px";
-	        }
-	              
-	        function closeNav() {
-	        	document.getElementById("mySidenav").style.width = "0";
-	        }
 	</script> 
 </head>
 <body>
 	<div id="navbar"></div> 
 
+	<script> 
+		// Uppdaterar cart quantity, annars är den tom när refershar:
+    		document.getElementById("navbar").innerHTML='<object type="text/html" data="side.html" ></object>';
+	</script>
+
+	<script> 
+		function load_content() {
+			inc_cont = 0
+			console.log(simpleCart.quantity())
+			if (simpleCart.quantity() == 0)
+			{
+				fetch("emptycart.html")
+					.then(resp => resp.text())
+					.then(text => {
+						inc_cont = document.getElementById("cart-content");
+						inc_cont.innerHTML = text;
+					})
+			}
+			else if (simpleCart.quantity() > 0) 
+			//else
+			{
+				fetch("normalcart.html")
+					.then(resp => resp.text())
+					.then(text => {
+						inc_cont = document.getElementById("cart-content");
+						inc_cont.innerHTML = text;
+					})
+			}
+		}
+
+		document.addEventListener("DOMContentLoaded", load_content);
+	</script> 
+
+	<script>
+	function empty_cart() {
+		simpleCart.empty();
+		load_content();
+	}
+	</script>
+
+	<div id="cart-content"></div> 
+
+	<script> 
+		// Uppdatera script
+    		document.getElementById("cart-content").innerHTML='<object type="text/html" data="side.html" ></object>';
+	</script>
 	<div id="included-footer"></div>
 </body>
 </html>

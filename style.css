@@ -6,11 +6,18 @@ body {
 	/*font-family: 'Fira Sans', sans-serif;*/
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 23px;
+	overflow-x: hidden; /* Strunta i att scrolla åt sidan när skrolla åt sidan */
 }
 
 a {
 	color: black;
 }
+
+a:hovera:not([data-attr=".logo"]) {
+	transition: transform .2s;
+	color: #D38871;
+}
+
 
 button {
 	outline: none;
@@ -58,7 +65,6 @@ button:hover {
 
 .sidenav a {
 	padding: 8px 8px 8px 32px;
-	color: black;
 	font-size: 25px;
 	display: block;
 	transition: 0.3s;
@@ -73,11 +79,10 @@ button:hover {
 	text-decoration: none; /* inget understryck på x:et */
 }
 
-.sidenav a:hover {
-	transition: transform .2s;
-	/*transform: scale(1.1);*/
-	color: #D38871;
-}
+/*.sidenav a:hover {*/
+	/*transition: transform .2s;*/
+	/*color: #D38871;*/
+/*}*/
 
 .logo {
 	display: flex;
@@ -110,21 +115,26 @@ button:hover {
 	color: white;
 	margin-top: 20px;
 	background-color: #D38871;
-	border-radius: 30px;
+	border-radius: 20px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 27px;
-	height: 27px;
 	position: relative;
 	float: left;
 	top: -30px;
 	left: 57px;
+	width: 27px;
+	height: 27px;
 }
 
 .shopcart:hover {
 	transition: transform .2s;
-	transform: scale(1.05); /* Resize */
+	transform: scale(1.05); 
+}
+
+.shopcart-text {
+	font-size: 16px;
+	text-align: center;
 }
 
 .searchbar {
@@ -266,6 +276,11 @@ button:hover {
 	border-width: 0;
 }
 
+.product a {
+	color: white;
+	text-decoration: none;
+}
+
 .product:hover {
 	transition: transform .2s;
 	transform: scale(1.05); /* Resize */
@@ -275,6 +290,17 @@ button:hover {
 	color: #D38871;
 	font-weight: bold;
 	font-size: 22px;
+}
+
+.std-button {
+	background-color: #D38871;
+	font-size: 22px;
+	color: white;
+	border: none;
+	border-radius: 12px;
+	height: 50px;
+	cursor: pointer;
+	padding-inline: 12px;
 }
 
 #page-footer {
@@ -298,11 +324,11 @@ button:hover {
 	margin-left: 30px; /* Ökar mellanrummet mellan varje individuell länk */
 }
 
-#page-footer-content ul li a:hover {
-	transition: transform .2s;
-	/*transform: scale(1.1);*/
-	color: #D38871;
-}
+/*#page-footer-content ul li a:hover {*/
+	/*transition: transform .2s;*/
+	/*[>transform: scale(1.1);<]*/
+	/*color: #D38871;*/
+/*}*/
 
 #page-footer-content .line-break {
 	  width: 100%;
