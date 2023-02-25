@@ -136,16 +136,13 @@ button:hover {
 	left: 57px;
 	width: 27px;
 	height: 27px;
+	font-size: 16px;
+	text-align: center;
 }
 
 .shopcart:hover {
 	transition: transform .2s;
 	transform: scale(1.05); 
-}
-
-.shopcart-text {
-	font-size: 16px;
-	text-align: center;
 }
 
 .searchbar {
