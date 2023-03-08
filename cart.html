@@ -34,9 +34,6 @@
 			        { attr: "quantity", label: "Quantity"},
 			        { view: "currency", attr: "total", label: "Subtotal" },
 				{ view: function(item, column) { //Custom decrement: om man har totalt en item kvar så uppdateras sidan så att emptycart.html sourcas
-				           //var price = item.quantity()
-				           //var id = item.get('id')
-				          // return `<div contenteditable="true" onkeyup="myFunction(this)" id="${id}" class="total-element">${price}</div>`
 					if (simpleCart.quantity() == 1) {
 						return '<div class="item-decrement "><a href="javascript:;" onclick="empty_cart()">-</a></div>'
 					}
@@ -54,10 +51,7 @@
     						items.push( item.name );
 					});
 
-					if (simpleCart.quantity() == 1) {
-						return '<div class="item-remove "><a href="javascript:;" onclick="empty_cart()">Remove</a></div>'
-					}
-					else if (items.length == 1) { //Om det bara finns en produkt totalt, oberoende av hur många av den produkten:
+					if (items.length == 1) { //Om det bara finns en produkt totalt, oberoende av hur många av den produkten:
 						return '<div class="item-remove "><a href="javascript:;" onclick="empty_cart()">Remove</a></div>'
 					}
 					else {

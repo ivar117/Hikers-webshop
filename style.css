@@ -64,7 +64,7 @@ button:hover {
 .sidenav {
 	background-color: white;
 	height: 100%;
-	width: 0;
+	width: 100%;
 	position: fixed;
 	z-index: 1; /* Stay on top */
 	top: 0; /* Stay at the top */
@@ -417,4 +417,10 @@ button:hover {
 	border-width: 2px;
 	border-color: #D38871;
 	background-color: #f9f9f9ff;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
