@@ -9,12 +9,15 @@
 	<script>
 	        function openNav() {
 	        	document.getElementById("mySidenav").style.width = "250px";
-			//document.getElementsByTagName("body")[0].style.opacity = "0.8";
+			document.addEventListener("keydown", event => { //Stäng sidenav om man trycker på escape
+			  if (event.keyCode == 27) { //27 är keycode för escape
+				closeNav();
+			  }
+			});
 	        }
 	              
 	        function closeNav() {
 	        	document.getElementById("mySidenav").style.width = "0";
-			//document.getElementsByTagName("body")[0].style.opacity = "1.0";
 	        }
 	</script>
 
