@@ -31,8 +31,15 @@ a:hover:not(.logo) {
 
 
 button {
-	outline: none;
+	background-color: #D38871;
+	border: none;
+	border-radius: 12px;
 	border-width: 0;
+	color: white;
+	font-size: 22px;
+	outline: none;
+	cursor: pointer;
+	padding-inline: 12px;
 }
 
 button:hover {
@@ -44,16 +51,13 @@ button:hover {
 	display: flex;
 	background: #f9f9f9ff;
 	align-items: center;
-	justify-content: center;
 	color: black;	
 	height: 94px;
 }
 
 .menu {
-	padding-left: 37px;
+	margin-left: 37px;
 	cursor: pointer;
-	/*padding-top: 20px;*/
-
 }
 
 .menu:hover {
@@ -71,7 +75,7 @@ button:hover {
 	left: 0;
 	overflow-x: hidden; /* Disable horizontal scroll */
 	padding-top: 60px; /* Place content 60px from the top */
-	transition: 0.250s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sidenav a {
@@ -90,17 +94,12 @@ button:hover {
 	text-decoration: none; /* inget understryck på x:et */
 }
 
-/*.sidenav a:hover {*/
-	/*transition: transform .2s;*/
-	/*color: #D38871;*/
-/*}*/
-
 .logo {
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-left: 120px; /* Om det är padding så blir paddingen en del av linken */
 	text-decoration: none;
+	margin-left: 100px;
+	/*margin-left: auto;*/
+	/*margin-left: auto;*/
 }
 
 .logo:hover {
@@ -193,7 +192,6 @@ button:hover {
 
 #page-header{
     background-image: url("images/landscape.jpg");
-    /*background-image: url("images/river.JPG");*/
     background-size: cover;
     background-attachment: fixed;
     height: 95vh;
@@ -205,36 +203,22 @@ button:hover {
 }
 
 #page-header .header-text {
-	/*margin-bottom: 340px;*/
 	margin-bottom: 31vh;
 }
 
 #page-header .largetext {
 	color: white;
 	font-size: 40px;
+	font-weight: bold;
 }
 
-/*#page-header .buttontext {*/
-	/*font-size: 22px;*/
-	/*color: white;*/
-/*}*/
-
 #page-header button {
-	background-color: #D38871;
-	cursor: pointer;
-	border-radius: 12px;
 	height: 50px;
-	padding-inline: 14px;
 	margin-top: 20px;
-	font-size: 22px;
-	color: white;
-	/*display: flex;*/
-	/*align-items: center;*/
-	/*justify-content: center;*/
 }
 
 .std-margin {
-	margin: 80px;
+	margin: 60px;
 }
 
 .underline-caption {
@@ -245,14 +229,10 @@ button:hover {
 	text-decoration-color: #D38871;
 }
 
-.popular-products p, strong {
-	font-size: 20px;
-}
-
 .products {
 	display: flex;
 	flex-wrap: wrap;
-	/*margin-top: 60px;*/
+	justify-content: center;
 }
 
 .product {
@@ -262,20 +242,13 @@ button:hover {
 	border-width: 2px;
 	border-color: #D38871;
 	width: 28vh;
-	margin-inline: 120px;
+	margin-inline: 90px;
 	margin-top: 50px;
 	background-color: #f9f9f9ff;
 }
 
 .product button {
-	background-color: #D38871;
-	font-size: 22px;
-	color: white;
-	border: none;
-	border-radius: 12px;
 	height: 50px;
-	cursor: pointer;
-	padding-inline: 12px;
 	display: flex;
 	margin-left: auto;
 	align-items: center;
@@ -347,12 +320,6 @@ button:hover {
 	margin-left: 30px; /* Ökar mellanrummet mellan varje individuell länk */
 }
 
-/*#page-footer-content ul li a:hover {*/
-	/*transition: transform .2s;*/
-	/*[>transform: scale(1.1);<]*/
-	/*color: #D38871;*/
-/*}*/
-
 #page-footer-content .line-break {
 	  width: 100%;
 }
@@ -364,18 +331,7 @@ button:hover {
 	text-underline-offset: 12px;
 	text-decoration-color: #D38871;
 	color: white;
-	/*font-weight: bold;*/
-	height: 100px;
-	border-radius: 18px;
-	cursor: pointer;
-	border: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-left: auto;
-	margin-right: auto;
-	padding-inline: 50px;
-	height: 88px;
+	font-weight: bold;
 }
 
 #std-backgroundimage {
@@ -420,7 +376,16 @@ button:hover {
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+	.sidenav {padding-top: 15px;}
+	.sidenav a {font-size: 18px;}
+	.question-text {font-size: 18px;}
+	button {font-size: 16px;}
+	body {font-size: 16px;}
+	.std-margin {margin: 20px;}
+	.product {
+		width: 22vh;
+		padding: 20px;
+	}
 }
