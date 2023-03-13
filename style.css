@@ -55,7 +55,7 @@ button:hover {
 }
 
 .menu {
-	margin-left: 37px;
+	margin-left: 35px;
 	cursor: pointer;
 	width: 42px;
 }
@@ -117,12 +117,16 @@ button:hover {
 
 .shopcart {
 	margin-left: auto;
+	margin-right: 70px;
 	cursor: pointer;
+}
+
+.shopcart img {
+	width: 45px;
 }
 
 .shopcart .counter {
 	color: white;
-	margin-top: 20px;
 	background-color: #D38871;
 	border-radius: 20px;
 	display: flex;
@@ -130,12 +134,11 @@ button:hover {
 	align-items: center;
 	position: relative;
 	float: left;
-	top: -30px;
+	top: -8px;
 	left: 57px;
 	width: 27px;
 	height: 27px;
 	font-size: 16px;
-	text-align: center;
 }
 
 .shopcart:hover {
@@ -363,8 +366,8 @@ button:hover {
 	font-style: italic;
 }
 
-.paragraph { /* Longer text, only in about */
-	width: 70vh;
+.paragraph { /* Longer text in about */
+	width: 80%;
 	word-wrap: break-word;
 }
 
@@ -447,8 +450,27 @@ button:hover {
 }
 
 @media screen and (max-width: 790px) {
+	body {
+		font-size: 20px;
+	}
+
 	.menu {
 		width: 38px;
+	}
+
+	.shopcart img {
+		width: 42px;
+	}
+
+	.shopcart .counter {
+		width: 23px;
+		height: 23px;
+		font-size: 14px;
+		left: 50px;
+	}
+
+	#topnav .logo {
+		margin-left: 60px;
 	}
 
 	.searchbar {
@@ -545,6 +567,9 @@ button:hover {
 }
 
 @media screen and (max-width: 500px) {
+	body {
+		font-size: 18px;
+	}
 	.sidenav {
 		padding-top: 25px;
 	}
@@ -556,6 +581,7 @@ button:hover {
 	.question-text {
 		font-size: 18px;
 	}
+
 	#topnav {
 		height: 80px;
 	}
@@ -577,6 +603,26 @@ button:hover {
 		font-size: 23px;
 	}
 
+	#topnav .logo {
+		margin-left: 35px;
+	}
+
+	.menu {
+		margin-left: 27px;
+	}
+
+	.shopcart img {
+		width: 38px;
+	}
+
+	.shopcart .counter {
+		width: 20px;
+		height: 20px;
+		font-size: 12px;
+		left: 46px;
+		top: -6px;
+	}
+
 	button {
 		font-size: 19px; padding-inline: 10px;
 	}
@@ -585,10 +631,6 @@ button:hover {
 		font-size: 19px; 
 		padding-inline: 10px;
 		height: 40px;
-	}
-
-	body {
-		font-size: 17px;
 	}
 
 	.std-margin {
@@ -670,6 +712,10 @@ button:hover {
 }
 
 @media screen and (max-width: 450px) {
+	#topnav .logo {
+		margin-left: 20px;
+	}
+
 	td {
 		padding-inline: 1px;
 	}
