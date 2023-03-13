@@ -97,6 +97,9 @@ button:hover {
 .logo {
 	display: flex;
 	text-decoration: none;
+}
+
+#topnav .logo {
 	margin-left: 100px;
 }
 
