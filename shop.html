@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width initial-scale=1">
+	<meta name="viewport" content="width=device-width initial-scale=1.0">
 	<link rel="stylesheet" href="style.css" media="all">
 	<title>Shop</title>
 
@@ -94,92 +94,31 @@
 		</div>
 
 		<div class="products">
-			<div class="product">
-				<img src="images/products/brownboots.jpg" alt="brown boots">
-				<p>Quality brown boots</p>
-				<div class="price">1499kr</div>
-				<button onclick="simpleCart.add({name: 'Brown boots' , price: 1499, quantity: 1});">
-					Add To Cart
-				</button>
-			</div>
-
-			<div class="product">
-				<img src="images/products/greenboots.jpg" alt="boots">
-				<p>Green hiking boots</p>
-				<div class="price">1049kr</div>
-				<button onclick="simpleCart.add({name: 'Green boots' , price: 1049, quantity: 1});">
-					Add To Cart
-				</button>
-			</div>
-
-			<div class="product">
-				<img src="images/products/swissarmy.jpg" alt="swiss army knife">
-				<p>Swiss army knife</p>
-				<div class="price">199kr</div>
-				<button onclick="simpleCart.add({name: 'Swiss army knife' , price: 199, quantity: 1});">
-					Add To Cart
-				</button>
-			</div>
-
-			<div class="product">
-				<img src="images/products/simple-green-backpack.jpg" alt="simple green backpack">
-				<p>Simple green backpack</p>
-				<div class="price">949kr</div>
-				<button onclick="simpleCart.add({name: 'Simple green backpack' , price: 949, quantity: 1});">
-					Add To Cart
-				</button>
-			</div>
-
-			<div class="product">
-				<img src="images/products/red-large-backpack.jpg" alt="red large backpack">
-				<p>Large red backpack</p>
-				<div class="price">1099kr</div>
-				<button onclick="simpleCart.add({name: 'Large red backpack' , price: 1099, quantity: 1});">
-					Add To Cart
-				</button>
-			</div>
-
-			<div class="product">
-				<img src="images/products/bluetent.jpg" alt="blue tent">
-				<p>High quality blue tent</p>
-				<div class="price">3499kr</div>
-				<button onclick="simpleCart.add({name: 'Blue tent' , price: 3499, quantity: 1});">
-					Add To Cart
-				</button>
-			</div>
 		</div>
 	</div>
 
 	<script>
-		//function (resp) {return resp.json()}
-		fetch("jsonnare.json")
+		fetch("products.json")
 			.then(resp => resp.json())
 			.then(items => {
 				console.log("kolla alla mina fina föremål som du kan coppa", items);
+				const prods = document.getElementsByClassName("products")[0];
+				for (const item of items) {
+					const element = document.createElement("div");
+					element.innerHTML = `
+					<div class="product">
+						<img src="${item.image}" alt="${item.name}">
+						<p>${item.name}</p>
+						<div class="price">${item.price}kr</div>
+							<button onclick="simpleCart.add({name: '${item.name}' , price: ${item.price}, quantity: 1});">
+								Add To Cart
+							</button>
+					</div>`;
+					prods.appendChild(element);
+				}
 		}).catch(e => {
 				console.log("nämen", e);
 		})
-
-		const items = [
-			{name:"hejare",price: 1337},
-			{name:"nejare",price: 2},
-			{name:"jejare",price: 1338},
-		]
-		const prods = document.getElementsByClassName("products")[0];
-		for (const item of items) {
-			const element =document.createElement("div");
-			element.innerHTML = `
-			<div class="product">
-				<img src="images/products/bluetent.jpg" alt="blue tent">
-				<p>${item.name}</p>
-				<div class="price">${item.price}kr</div>
-					<button onclick="simpleCart.add({name: '${item.name}' , price: ${item.price}, quantity: 1});">
-					Add To Cart
-				</button>
-			</div>`;
-			prods.appendChild(element);
-		}
-
 	</script>
 
 	<div id="included-footer"></div>

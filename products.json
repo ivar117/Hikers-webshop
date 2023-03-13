@@ -1,0 +1,38 @@
+[
+	{
+		"id": 1,
+		"name": "Quality brown boots",
+		"price": 1449,
+		"image": "images/products/brownboots.jpg"
+	},
+	{
+		"id": 2,
+		"name": "Green hiking boots",
+		"price": 1049,
+		"image": "images/products/greenboots.jpg"
+	},
+	{
+		"id": 3,
+		"name": "Swiss army knife",
+		"price": 199,
+		"image": "images/products/swissarmy.jpg"
+	},
+	{
+		"id": 4,
+		"name": "Simple green backpack",
+		"price": 949,
+		"image": "images/products/simple-green-backpack.jpg"
+	},
+	{
+		"id": 5,
+		"name": "Large red backpack",
+		"price": 1099,
+		"image": "images/products/red-large-backpack.jpg"
+	},
+	{
+		"id": 6,
+		"name": "High quality blue tent",
+		"price": 3499,
+		"image": "images/products/bluetent.jpg"
+	}
+]
