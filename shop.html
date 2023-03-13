@@ -147,15 +147,40 @@
 					Add To Cart
 				</button>
 			</div>
-
-			<!--<div class="product">-->
-				<!--<img src="images/products/facenet.jpg" height="auto" alt="face net" style="object-position: center;">-->
-				<!--<p>Anti-mosquito face net</p>-->
-				<!--<div class="price">29kr</div>-->
-				<!--<button><p>Add to cart</p></button>-->
-			<!--</div>-->
 		</div>
 	</div>
+
+	<script>
+		//function (resp) {return resp.json()}
+		fetch("jsonnare.json")
+			.then(resp => resp.json())
+			.then(items => {
+				console.log("kolla alla mina fina föremål som du kan coppa", items);
+		}).catch(e => {
+				console.log("nämen", e);
+		})
+
+		const items = [
+			{name:"hejare",price: 1337},
+			{name:"nejare",price: 2},
+			{name:"jejare",price: 1338},
+		]
+		const prods = document.getElementsByClassName("products")[0];
+		for (const item of items) {
+			const element =document.createElement("div");
+			element.innerHTML = `
+			<div class="product">
+				<img src="images/products/bluetent.jpg" alt="blue tent">
+				<p>${item.name}</p>
+				<div class="price">${item.price}kr</div>
+					<button onclick="simpleCart.add({name: '${item.name}' , price: ${item.price}, quantity: 1});">
+					Add To Cart
+				</button>
+			</div>`;
+			prods.appendChild(element);
+		}
+
+	</script>
 
 	<div id="included-footer"></div>
 </body>

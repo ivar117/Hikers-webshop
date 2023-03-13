@@ -1,3 +1,7 @@
+/** {*/
+	/*box-sizing: border-box;*/
+/*}*/
+
 body {
 	margin: 0px;
 	padding: 0px;
@@ -16,8 +20,8 @@ td {
 
 table {
 	border-collapse: separate;
-    	text-indent: initial;
-    	border-spacing: 2p
+	text-indent: initial;
+	border-spacing: 2p;
 }
 
 a {
@@ -109,6 +113,7 @@ button:hover {
 
 .logoimg {
 	padding-bottom: 10px;
+	width: 60px;
 }
 
 .logotext {
@@ -153,9 +158,7 @@ button:hover {
 	padding-inline: 20px;
 	margin-left: auto;
 	margin-right: auto;
-	justify-content: center;
-	align-items: center;
-	width: 500px;
+	width: 600px;
 	height: 43px;
 	margin-top: 30px;
 	/*centrera*/
@@ -182,7 +185,7 @@ button:hover {
 	cursor: pointer;
 	margin-left: auto;
 	/*margin-left: 150px;*/
-	margin-left: 220px;
+	/*margin-left: 220px;*/
 }
 
 .searchbar p {
@@ -202,7 +205,7 @@ button:hover {
     flex-direction: column;
 }
 
-#page-header .header-text {
+#page-header .header-content {
 	margin-bottom: 31vh;
 }
 
@@ -210,6 +213,9 @@ button:hover {
 	color: white;
 	font-size: 40px;
 	font-weight: bold;
+	text-align: left;
+	word-wrap: wrap;
+	width: 40vw;
 }
 
 #page-header button {
@@ -229,6 +235,14 @@ button:hover {
 	text-decoration-color: #D38871;
 }
 
+.smaller-underline-caption {
+	font-size: 34px;
+	word-wrap:none;
+	text-decoration: underline;
+	text-underline-offset: 12px;
+	text-decoration-color: #D38871;
+}
+
 .products {
 	display: flex;
 	flex-wrap: wrap;
@@ -242,7 +256,7 @@ button:hover {
 	border-width: 2px;
 	border-color: #D38871;
 	width: 28vh;
-	margin-inline: 90px;
+	margin-inline: 60px;
 	margin-top: 50px;
 	background-color: #f9f9f9ff;
 }
@@ -264,12 +278,16 @@ button:hover {
 	object-fit: cover;
 	object-position: bottom;
 	max-width: 100%; 
+	margin-left: auto;
+	margin-right: auto;
 	/*max-height: 22vh;*/
 	height: 27vh;
-	width: 100%;
+	/*width: 100%;*/
 	border-style: solid;
 	border-radius: 15px;
 	border-width: 0;
+	display: flex;
+	justify-content: center;
 }
 
 .product a {
@@ -307,15 +325,13 @@ button:hover {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	margin-left: auto;
-	margin-right: auto;
 	margin-top: 3vh;
 	margin-bottom: 1vh;
 }
 
 #page-footer-content ul li {
-	font-size: 22px;
 	display: inline-block;
+	font-size: 22px;
 	list-style-type: none;
 	margin-left: 30px; /* Ökar mellanrummet mellan varje individuell länk */
 }
@@ -354,7 +370,7 @@ button:hover {
 }
 
 .paragraph { /* Longer text, only in about */
-	width: 60vh;
+	width: 70vh;
 	word-wrap: break-word;
 }
 
@@ -375,17 +391,202 @@ button:hover {
 	background-color: #f9f9f9ff;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-
-@media screen and (max-height: 450px) {
-	.sidenav {padding-top: 15px;}
-	.sidenav a {font-size: 18px;}
-	.question-text {font-size: 18px;}
-	button {font-size: 16px;}
-	body {font-size: 16px;}
-	.std-margin {margin: 20px;}
+@media screen and (max-width: 1000px) {
 	.product {
-		width: 22vh;
-		padding: 20px;
+		margin-inline: 20px;
 	}
+
+	#page-header .largetext {
+		width: 100vh;
+	}
+
+	td {
+		padding-inline: 5px;
+	}
+
+	.cart-content {
+		padding-left: 2px;
+		padding-right: 2px;
+		font-size: 17px;
+	}
+}
+
+@media screen and (max-width: 790px) {
+	.searchbar {
+		height: 37px;
+		width: 90%;
+	}
+
+	.product {
+		width: 20vh;
+		margin-inline: 10px;
+		margin-top: 35px;
+		padding: 15px;
+		margin-top: 35px;
+	}
+
+	.product img {
+		height: 20vh;
+		max-width: 95%;
+	}
+
+	.std-margin {
+		margin: 35px;
+	}
+	.underline-caption {
+		font-size: 34px
+	}
+
+	.smaller-underline-caption {
+		font-size: 30px
+	}
+
+	.bgimage-caption {
+		font-size: 50px
+	}
+
+	#page-header .header-content {
+		margin-bottom: 22vh;
+	}
+
+	#page-header .largetext {
+		font-size: 35px;
+		width: 65vw;
+	}
+
+	#page-header {
+    		height: 85vh;
+	}
+
+	#std-backgroundimage {
+		height: 55vh
+	}
+
+	.sidenav {
+		padding-top: 45px;
+	}
+
+	button {
+		font-size: 20px; padding-inline: 10px;
+	}
+
+	.sidenav a {
+		font-size: 20px;
+	}
+
+	td {
+		padding-inline: 3px;
+	}
+
+	.cart-content {
+		padding-left: 2px;
+		padding-right: 2px;
+		font-size: 16px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.sidenav {
+		padding-top: 25px;
+	}
+
+	.sidenav a {
+		font-size: 18px;
+	}
+
+	.question-text {
+		font-size: 18px;
+	}
+	#topnav {
+		height: 80px;
+	}
+
+	#page-header {
+    		height: 75vh;
+	}
+
+	#page-header .header-content {
+		margin-bottom: 15vh;
+	}
+	
+	#page-header .largetext {
+		font-size: 30px;
+		width: 55vh;
+	}
+
+	.logotext {
+		font-size: 23px;
+	}
+
+	button {
+		font-size: 19px; padding-inline: 10px;
+	}
+
+	.std-button {
+		font-size: 19px; 
+		padding-inline: 10px;
+		height: 40px;
+	}
+
+	body {
+		font-size: 17px;
+	}
+
+	.std-margin {
+		margin: 15px;
+	}
+
+	.product {
+		width: 19vh;
+		margin-inline: 10px;
+		padding: 10px;
+		margin-top: 30px;
+	}
+
+	.product img {
+		height: 20vh;
+		max-width: 90%;
+	}
+
+	.product button {
+		height: 45px;
+	}
+
+	.underline-caption {
+		font-size: 32px
+	}
+
+	.smaller-underline-caption {
+		font-size: 28px
+	}
+
+	.searchbar {
+		height: 35px;
+		width: 90%;
+	}
+
+	.bgimage-caption {
+		font-size: 45px
+	}
+	
+	#std-backgroundimage {
+		height: 40vh
+	}
+
+	.logoimg {
+		width: 55px
+	}
+
+	td {
+		padding-inline: 3px;
+	}
+
+	.cart-content {
+		padding-left: 2px;
+		padding-right: 2px;
+		font-size: 15px;
+	}
+
+	#page-footer-content {}
+	/* #topnav {} Ska vara mindre height */
 }
