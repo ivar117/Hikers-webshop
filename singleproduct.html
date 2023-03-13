@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width initial-scale=1.0">
 	<link rel="stylesheet" href="style.css" media="all">
-	<title>About</title>
+	<title>Product</title>
 
 	<script>
 	        function openNav() {
@@ -60,30 +60,54 @@
     		document.getElementById("navbar").innerHTML='<object type="text/html" data="side.html" ></object>';
 	</script>
 
-	<div id="std-backgroundimage" style="background-image: url('images/inside-tent.jpg'); background-position: top;">
-		<div class="bgimage-caption">About us</div>
-	</div>
+	<script> //Få parametervärde från href för vilken produkt som ska väljas
+		function getParameterByName(name, url) {
+		        if (!url) url = window.location.href;
+		        name = name.replace(/[\[\]]/g, '\\$&');
+		        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+		            results = regex.exec(url);
+		        if (!results) return null;
+		        if (!results[2]) return '';
+		        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+		    }
+		
+		    var productid = getParameterByName('productid');
+		console.log(productid)
+	</script>
 
 	<div class="std-margin">
-		<!--<div class="underline-caption">About us</div>-->
-		<p class="paragraph">Founded on a passion for the outdoors, and wanting
-			others to succeed on their own journeys.
-		</p>
-
-		<div class="underline-caption">Frequently Asked Questions</div>
-
-		<p class="question-text">How long does shipping take?</p>
-		<p class="paragraph">It will usually take up to 4-5 business days.</p>
-
-		<p class="question-text">What is your return policy?</p>
-		<p class="paragraph">We accept returns within 14 days of initial delivery.</p>
-
-		<p class="question-text">What is your privacy policy?</p>
-		<p class="paragraph">At Hikers we care a lot about our customers privacy. We won't share data with
-		third parties unless required by law. We only temporarily store data necessary to fulfill your
-		orders.
-		</p>
 	</div>
+
+	<script>
+		fetch("products.json")
+			.then(resp => resp.json())
+			.then(items => {
+				const prod = document.getElementsByClassName("std-margin")[0];
+				for (const item of items) {
+					if (item.id == productid) { //Visa bara den man klickade på
+						const element = document.createElement("div");
+				 		element.innerHTML = `
+						<div class="singleproduct-container">
+							<div class="left">
+								<div class="smaller-underline-caption">${item.name}</div>
+								<img src="${item.image}">
+								<p class="description">${item.desc}</p>
+								<div class="price">${item.price}kr</div>
+								<a onclick="simpleCart.add({name: '${item.name}' , price: ${item.price}, quantity: 1});">
+									<button>
+										Add To Cart
+									</button>
+								</a>
+							</div>
+						</div>
+						`;
+				 	       prod.appendChild(element);
+					}	
+				}
+		}).catch(e => {
+				console.log("nämen", e);
+		})
+	</script>
 
 	<div id="included-footer"></div>
 </body>

@@ -107,12 +107,16 @@
 					const element = document.createElement("div");
 					element.innerHTML = `
 					<div class="product">
-						<img src="${item.image}" alt="${item.name}">
-						<p>${item.name}</p>
-						<div class="price">${item.price}kr</div>
-							<button onclick="simpleCart.add({name: '${item.name}' , price: ${item.price}, quantity: 1});">
-								Add To Cart
-							</button>
+							<a class="productlink" href="singleproduct.html?productid=${item.id}">
+							<img src="${item.image}" alt="${item.name}">
+							<p>${item.name}</p>
+							<div class="price">${item.price}kr</div>
+							<a onclick="simpleCart.add({name: '${item.name}' , price: ${item.price}, quantity: 1});">
+								<button>
+									Add To Cart
+								</button>
+							</a>
+						</a>
 					</div>`;
 					prods.appendChild(element);
 				}

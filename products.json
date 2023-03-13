@@ -2,36 +2,42 @@
 	{
 		"id": 1,
 		"name": "Quality brown boots",
+		"desc": "A pair of robust, quality boots. These are more suited for a colder weather and climate.",
 		"price": 1449,
 		"image": "images/products/brownboots.jpg"
 	},
 	{
 		"id": 2,
 		"name": "Green hiking boots",
+		"desc": "A pair of nice green boots. These are more suited for hikes during the hotter sesons.",
 		"price": 1049,
 		"image": "images/products/greenboots.jpg"
 	},
 	{
 		"id": 3,
 		"name": "Swiss army knife",
+		"desc": "This famous tool has earned its reputation of being the best for portability and for multiple use cases. It is a must have for any serious hike.",
 		"price": 199,
 		"image": "images/products/swissarmy.jpg"
 	},
 	{
 		"id": 4,
 		"name": "Simple green backpack",
+		"desc": "A simple, artisinal backpack with leather deatils. This one is quite small and compact, and is probably best suited more for shorter trips.",
 		"price": 949,
 		"image": "images/products/simple-green-backpack.jpg"
 	},
 	{
 		"id": 5,
 		"name": "Large red backpack",
-		"price": 1099,
+		"desc": "This backpack offers a lot of room, making it suitable for longer trips. There is additionally a lot of storage on its outside for things you might be in quick need of.",
+		"price": 1199,
 		"image": "images/products/red-large-backpack.jpg"
 	},
 	{
 		"id": 6,
 		"name": "High quality blue tent",
+		"desc": "A tent is a must have for adventurers who like to sleep in the wilderness. This tent is of very high quality at an affordable price, and can fit a maximum of 4 people.",
 		"price": 3499,
 		"image": "images/products/bluetent.jpg"
 	}
