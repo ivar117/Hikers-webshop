@@ -590,3 +590,109 @@ button:hover {
 	#page-footer-content {}
 	/* #topnav {} Ska vara mindre height */
 }
+
+@media screen and (max-width: 450px) {
+	.sidenav {
+		padding-top: 25px;
+	}
+
+	.sidenav a {
+		font-size: 18px;
+	}
+
+	.question-text {
+		font-size: 18px;
+	}
+	#topnav {
+		height: 80px;
+	}
+
+	#page-header {
+    		height: 75vh;
+	}
+
+	#page-header .header-content {
+		margin-bottom: 15vh;
+	}
+	
+	#page-header .largetext {
+		font-size: 30px;
+		width: 55vh;
+	}
+
+	.logotext {
+		font-size: 23px;
+	}
+
+	button {
+		font-size: 19px; padding-inline: 10px;
+	}
+
+	.std-button {
+		font-size: 19px; 
+		padding-inline: 10px;
+		height: 40px;
+	}
+
+	body {
+		font-size: 17px;
+	}
+
+	.std-margin {
+		margin: 15px;
+	}
+
+	.product {
+		width: 19vh;
+		margin-inline: 10px;
+		padding: 10px;
+		margin-top: 30px;
+	}
+
+	.product img {
+		height: 20vh;
+		max-width: 90%;
+	}
+
+	.product button {
+		height: 45px;
+	}
+
+	.underline-caption {
+		font-size: 32px
+	}
+
+	.smaller-underline-caption {
+		font-size: 28px
+	}
+
+	.searchbar {
+		height: 35px;
+		width: 90%;
+	}
+
+	.bgimage-caption {
+		font-size: 45px
+	}
+	
+	#std-backgroundimage {
+		height: 40vh
+	}
+
+	.logoimg {
+		width: 55px
+	}
+
+	td {
+		padding-inline: 1px;
+	}
+
+	.cart-content {
+		padding-left: 1px;
+		padding-right: 1px;
+		font-size: 13px;
+	}
+
+	#page-footer-content {}
+	/* #topnav {} Ska vara mindre height */
+}
