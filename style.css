@@ -1,8 +1,8 @@
 body {
 	margin: 0px;
 	padding: 0px;
-	box-sizing: border-box;
 	color: black;
+	box-sizing: border-box;
 	/*font-family: 'Fira Sans', sans-serif;*/
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 23px;
@@ -51,7 +51,11 @@ button:hover {
 	background: #f9f9f9ff;
 	align-items: center;
 	color: black;	
-	height: 94px;
+	flex-wrap: wrap;
+	width: 100%;
+	top: 0;
+	overflow-x: hidden;
+	/*height: 94px;*/
 }
 
 .menu {
@@ -118,17 +122,17 @@ button:hover {
 	padding-left: 8px;
 }
 
-.shopcart {
+#topnav .shopcart {
 	margin-left: auto;
 	margin-right: 70px;
 	cursor: pointer;
 }
 
-.shopcart img {
+#topnav .shopcart img {
 	width: 45px;
 }
 
-.shopcart .counter {
+#topnav .shopcart .counter {
 	color: white;
 	background-color: #D38871;
 	border-radius: 20px;
@@ -144,7 +148,7 @@ button:hover {
 	font-size: 16px;
 }
 
-.shopcart:hover {
+#topnav .shopcart:hover {
 	transition: transform .2s;
 	transform: scale(1.05); 
 }
@@ -215,7 +219,7 @@ button:hover {
 	font-weight: bold;
 	text-align: left;
 	word-wrap: wrap;
-	width: 40vw;
+	max-width: 70%;
 }
 
 #page-header button {
@@ -585,10 +589,6 @@ button:hover {
 		font-size: 18px;
 	}
 
-	#topnav {
-		height: 80px;
-	}
-
 	#page-header {
     		height: 75vh;
 	}
@@ -611,7 +611,7 @@ button:hover {
 	}
 
 	.menu {
-		margin-left: 27px;
+		margin-left: 20px;
 	}
 
 	.shopcart img {
@@ -711,12 +711,15 @@ button:hover {
 	.singleproduct-container button {
 		height: 41px;
 	}
-	/* #topnav {} Ska vara mindre height */
 }
 
 @media screen and (max-width: 450px) {
 	#topnav .logo {
 		margin-left: 20px;
+	}
+
+	#topnav .shopcart {
+		margin-right: 20px;
 	}
 
 	td {
@@ -732,4 +735,12 @@ button:hover {
 	.singleproduct-container img {
 		max-width: 360px;
 	}
+
+	.bgimage-caption {font-size: 30px}
+
+	#page-header .largetext {max-width: 85%;}
+}
+
+@media screen and (max-width: 350px) {
+	.bgimage-caption {font-size: 28px}
 }
